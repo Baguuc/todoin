@@ -53,7 +53,7 @@ impl ProjectRepository {
         };
     }
     
-    async fn set_active<'c, C: sqlx::postgres::PgExecutor<'c>>(id: &i32, active: &bool, client: C) -> Result<()> {
+    pub async fn set_active<'c, C: sqlx::postgres::PgExecutor<'c>>(id: &i32, active: &bool, client: C) -> Result<()> {
         use sqlx::query;
 
         let sql = "UPDATE projects SET active = $1 WHERE id = $2;";
@@ -64,10 +64,6 @@ impl ProjectRepository {
             Err(err) => return Err(Error::Sqlx(err))
         };
     }
-    
-    pub async fn activate<'c, C: sqlx::postgres::PgExecutor<'c>>(id: &i32, client: C) -> Result<()> { Self::set_active(id, &true, client).await }
-    
-    pub async fn deactivate<'c, C: sqlx::postgres::PgExecutor<'c>>(id: &i32, client: C) -> Result<()> { Self::set_active(id, &false, client).await } 
     
     pub async fn grant<'c, C: sqlx::postgres::PgExecutor<'c>>(id: &i32, user_login: &String, client: C) -> Result<()> {
         use sqlx::query;
