@@ -34,6 +34,7 @@ async fn main() -> Result<()> {
             .app_data(Data::new(config.clone()))
             .app_data(Data::new(sdk.clone()))
             .service(crate::routes::project::insert::insert_route)
+            .service(crate::routes::project::list::list_route)
     });
 
     let binded_server = match server.bind(("0.0.0.0", config.port.clone())) {
