@@ -1,7 +1,7 @@
 #[actix_web::post("/projects")]
 pub async fn insert_route(
     req: actix_web::HttpRequest,
-    json: actix_web::web::Path<RequestBody>,
+    json: actix_web::web::Json<RequestBody>,
     client: actix_web::web::Data<sqlx::postgres::PgPool>,
     config: actix_web::web::Data<crate::config::Config>,
     user_sdk: actix_web::web::Data<authin_sdk::user::UserSdk>,
