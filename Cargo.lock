@@ -257,6 +257,7 @@ dependencies = [
 [[package]]
 name = "authin-domain"
 version = "0.1.0"
+source = "git+https://github.com/Baguuc/authin#72f351e771d58e62d64adde6c7e1bf2a0d73433e"
 dependencies = [
  "serde",
  "serde_json",
@@ -266,6 +267,7 @@ dependencies = [
 [[package]]
 name = "authin-sdk"
 version = "0.1.0"
+source = "git+https://github.com/Baguuc/authin#72f351e771d58e62d64adde6c7e1bf2a0d73433e"
 dependencies = [
  "authin-domain",
  "reqwest",

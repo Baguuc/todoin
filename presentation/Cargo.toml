@@ -7,7 +7,7 @@ edition = "2024"
 # layer deps
 todoin-domain = { path = "../domain" }
 todoin-application = { path = "../application" }
-authin-sdk = { path = "../../authin/sdk" }
+authin-sdk = { git = "https://github.com/Baguuc/authin" }
 
 actix-web = "4"
 chrono = { version = "0.4.41", features = ["serde"] }

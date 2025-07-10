@@ -5,7 +5,7 @@ RUN apt-get update && \
     apt-get install -y musl-tools && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /build/todoin
+WORKDIR /build
 COPY . .
 
 # Set up musl target
@@ -23,6 +23,6 @@ FROM alpine:latest AS final
 
 WORKDIR /app
 
-COPY --from=build /build/todoin/target/x86_64-unknown-linux-musl/release/todoin-presentation /usr/local/bin/todoin
+COPY --from=build /build/target/x86_64-unknown-linux-musl/release/todoin-presentation /usr/local/bin/todoin
 
 CMD ["todoin"]
