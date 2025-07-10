@@ -4,3 +4,4 @@ pub mod retrieve;
 pub mod delete;
 pub mod set_active;
 pub mod grant;
+pub mod revoke;

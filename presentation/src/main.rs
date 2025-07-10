@@ -39,6 +39,7 @@ async fn main() -> Result<()> {
             .service(crate::routes::project::delete::delete_route)
             .service(crate::routes::project::set_active::set_active_route)
             .service(crate::routes::project::grant::grant_route)
+            .service(crate::routes::project::revoke::revoke_route)
     });
 
     let binded_server = match server.bind(("0.0.0.0", config.port.clone())) {
