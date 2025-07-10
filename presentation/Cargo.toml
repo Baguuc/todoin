@@ -1,0 +1,24 @@
+[package]
+name = "todoin-presentation"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# layer deps
+todoin-domain = { path = "../domain" }
+todoin-application = { path = "../application" }
+authin-sdk = { path = "../../authin/sdk" }
+
+actix-web = "4"
+chrono = { version = "0.4.41", features = ["serde"] }
+colored = "3.0.0"
+
+# shared deps
+sqlx.workspace = true
+serde_json.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+futures.workspace = true
+tokio.workspace = true
+clin.workspace = true
+
